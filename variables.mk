@@ -3,7 +3,18 @@
 # - to use the help text, your Makefile should have a 'help' target that just
 #   prints all the HELP_LINES
 #########################################################################################
+<<<<<<< HEAD
 HELP_COMPILATION_VARIABLES =
+=======
+HELP_COMPILATION_VARIABLES = \
+"   JAVA_HEAP_SIZE    = if overridden, set the default java heap size (default is 8G)" \
+"   JAVA_TOOL_OPTIONS = if overridden, set underlying java tool options (default sets misc. sizes and tmp dir)" \
+"   SBT_OPTS          = set additional sbt command line options (these take the form -Dsbt.<option>=<setting>) " \
+"                       See https://www.scala-sbt.org/1.x/docs/Command-Line-Reference.html\#Command+Line+Options" \
+"   SBT_BIN           = if overridden, used to invoke sbt (default is to invoke sbt by sbt-launch.jar)" \
+"   FIRRTL_LOGLEVEL   = if overridden, set firrtl log level (default is error)"
+
+>>>>>>> ec1b075... Merge pull request #1054 from ucb-bar/use-published-deps
 HELP_PROJECT_VARIABLES = \
 "   SUB_PROJECT            = use the specific subproject default variables [$(SUB_PROJECT)]" \
 "   SBT_PROJECT            = the SBT project that you should find the classes/packages in [$(SBT_PROJECT)]" \
@@ -151,9 +162,12 @@ JAVA_OPTS ?= -Xmx$(JAVA_HEAP_SIZE) -Xss8M -XX:MaxPermSize=256M -Djava.io.tmpdir=
 #########################################################################################
 # default sbt launch command
 #########################################################################################
+<<<<<<< HEAD
 # by default build chisel3/firrtl and other subprojects from source
 override SBT_OPTS += -Dsbt.sourcemode=true -Dsbt.workspace=$(base_dir)/tools
 
+=======
+>>>>>>> ec1b075... Merge pull request #1054 from ucb-bar/use-published-deps
 SCALA_BUILDTOOL_DEPS = $(SBT_SOURCES)
 
 SBT_THIN_CLIENT_TIMESTAMP = $(base_dir)/project/target/active.json

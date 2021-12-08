@@ -14,4 +14,9 @@ They expect you to know about Chisel, Parameters, configs, etc.
    Debugging-BOOM
    Resources
    CDEs
+<<<<<<< HEAD
+=======
+   Harness-Clocks
+   Managing-Published-Scala-Dependencies
+>>>>>>> ec1b075... Merge pull request #1054 from ucb-bar/use-published-deps
 
