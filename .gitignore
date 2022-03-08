@@ -20,9 +20,6 @@ tags
 env-riscv-tools.sh
 env-esp-tools.sh
 .bsp/
-<<<<<<< HEAD
 .ivy2/
 .sbt/
 .ccache/
-=======
->>>>>>> ec1b075... Merge pull request #1054 from ucb-bar/use-published-deps

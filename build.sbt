@@ -161,12 +161,7 @@ lazy val testchipip = (project in file("generators/testchipip"))
   .settings(commonSettings)
 
 lazy val chipyard = (project in file("generators/chipyard"))
-<<<<<<< HEAD
-  .sourceDependency(testchipip, testchipipLib)
-  .dependsOn(rocketchip, boom, hwacha, sifive_blocks, sifive_cache, utilities, iocell,
-=======
-  .dependsOn(testchipip, rocketchip, boom, hwacha, sifive_blocks, sifive_cache, iocell,
->>>>>>> ec1b075... Merge pull request #1054 from ucb-bar/use-published-deps
+  .dependsOn(testchipip, rocketchip, boom, hwacha, sifive_blocks, sifive_cache, utilities, iocell,
     sha3, // On separate line to allow for cleaner tutorial-setup patches
     dsptools, `rocket-dsptools`,
     gemmini, icenet, tracegen, cva6, nvdla, sodor)
@@ -174,17 +169,16 @@ lazy val chipyard = (project in file("generators/chipyard"))
   .settings(commonSettings)
 
 lazy val tracegen = (project in file("generators/tracegen"))
-<<<<<<< HEAD
-  .sourceDependency(testchipip, testchipipLib)
-  .dependsOn(rocketchip, sifive_cache, boom, utilities)
-=======
-  .dependsOn(testchipip, rocketchip, sifive_cache, boom)
->>>>>>> ec1b075... Merge pull request #1054 from ucb-bar/use-published-deps
+  .dependsOn(testchipip, rocketchip, sifive_cache, boom, utilities)
   .settings(libraryDependencies ++= rocketLibDeps.value)
   .settings(commonSettings)
 
+// lazy val utilities = (project in file("generators/utilities"))
+//   .sourceDependency(testchipip, testchipipLib)
+//   .settings(commonSettings)
+
 lazy val utilities = (project in file("generators/utilities"))
-  .sourceDependency(testchipip, testchipipLib)
+  .dependsOn(testchipip)
   .settings(commonSettings)
 
 lazy val icenet = (project in file("generators/icenet"))

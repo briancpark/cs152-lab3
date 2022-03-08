@@ -21,7 +21,7 @@ static inline unsigned long get_cycles(void)
 }
 
 /* Specialized output function to avoid printf() overhead
-   Use this to emit results for the autograder, one byte per line */
+   Use this to emit results, one byte per line */
 static inline void printx(unsigned char x)
 {
     static const char hex[] = "0123456789abcdef";
